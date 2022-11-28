@@ -11,7 +11,13 @@ body {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='105' viewBox='0 0 80 105'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='death-star' fill='%23ff0029' fill-opacity='0.4'%3E%3Cpath d='M20 10a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V10zm15 35a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V45zM20 75a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V75zm30-65a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V10zm0 65a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V75zM35 10a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V10zM5 45a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V45zm0-35a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V10zm60 35a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V45zm0-35a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V10z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     font-family: 'Oswald', sans-serif;
 }
-
+.menu-btn {
+    position: absolute;
+    cursor: pointer;
+    top: 15px;
+    right: 30px;
+    font-size: 1.5rem;
+}
 a{
     color: white;
     text-decoration: none;
@@ -68,7 +74,7 @@ ul {
     height: 550px;
     margin-bottom: 20px;
     background: url(img/showcase3.jpg) no-repeat center /cover;
-    padding-bottom: 50px;
+    padding: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -183,7 +189,7 @@ ul {
     font-size: 3rem;
 }
 
-/* links footer*/
+/* footer*/
 
 .footer_links {
     background: #2f3640;
@@ -192,13 +198,49 @@ ul {
     padding: 35px 0;
 }
 
-.footer_content {
+.footer_content h3{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 10px;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
 }
-.footer_content ul {
-    margin: 0 auto;
+
+@media (max-width: 700px) {
+  
+    .nav_main ul.nav_menu.show {
+        transform: translateX(-20px);
+    }
+    
+    .nav_main ul.nav_menu{
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #2f3640;
+        height: 100%;
+        transform: translateX(-20px);
+        transition: transform .5s ease-in-out;
+    }
+
+    .nav_main ul.nav_menu_right {
+        margin-right: 50px;
+    }
+  
+    .nav_main ul.nav_menu.show {
+        transform: translateX(-20px);
+    }
+
+
+
+    .news-cards {
+        grid-template-columns: repeat(2,1fr);
+    }
+    .card_banner_one .content, .card_banner_two .contenido{
+        width: 80%;
+    }
+}
+@media(max-width:500px){
+    .news-cards{
+        grid-template-columns: 1fr;
+    }
 }
